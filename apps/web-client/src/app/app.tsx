@@ -1,16 +1,16 @@
-import styled from 'styled-components';
-
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { ThemeContextProvider } from '../modules/theme';
+import { UsersPages } from '../modules/users';
+import { Header } from '../components/organisms';
+import StyledApp from './app.styles';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="web-client" />
-    </StyledApp>
+    <ThemeContextProvider>
+      <StyledApp>
+        <Header />
+        <UsersPages.UserList />
+      </StyledApp>
+    </ThemeContextProvider>
   );
 }
 
