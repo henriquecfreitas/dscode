@@ -1,15 +1,19 @@
 import { ThemeContextProvider } from '../modules/theme';
-import { UsersPages } from '../modules/users';
+import { UsersContextProvider, UsersPages } from '../modules/users';
 import { Header } from '../components/organisms';
-import StyledApp from './app.styles';
+import StyledApp, { StyledAppPage } from './app.styles';
 
 export function App() {
   return (
     <ThemeContextProvider>
-      <StyledApp>
-        <Header />
-        <UsersPages.UserList />
-      </StyledApp>
+      <UsersContextProvider>
+        <StyledApp>
+          <Header />
+          <StyledAppPage>
+            <UsersPages.UserList />
+          </StyledAppPage>
+        </StyledApp>
+      </UsersContextProvider>
     </ThemeContextProvider>
   );
 }

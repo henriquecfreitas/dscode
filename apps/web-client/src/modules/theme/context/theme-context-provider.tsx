@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useCallback, useState } from "react"
+import { ConfigProvider, theme as antdTheme } from "antd";
 
 import DarkTheme from "../dark-theme";
 import LightTheme from "../light-theme";
@@ -12,11 +13,16 @@ const ThemeContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setTheme(theme.id === Themes.Dark ? LightTheme : DarkTheme)
   }, [theme, setTheme]);
 
+  const { defaultAlgorithm, darkAlgorithm } = antdTheme;
+  const algorithm = theme.id === Themes.Dark ? darkAlgorithm : defaultAlgorithm;
+
   return <ThemeContext.Provider value={{
     theme,
     toggleTheme,
   }}>
-    {children}
+    <ConfigProvider theme={{algorithm}}>
+      {children}
+    </ConfigProvider>
   </ThemeContext.Provider>
 }
 
