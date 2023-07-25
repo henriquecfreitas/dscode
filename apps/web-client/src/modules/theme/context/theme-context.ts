@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { Theme, Themes } from "../theme.type";
+import { Theme } from "../theme.type";
 import DarkTheme from "../dark-theme";
 
 const ThemeContext = createContext<{

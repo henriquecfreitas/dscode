@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import { Avatar, Title } from "web-client/components/atoms";
+import { Avatar, Button, Icons, Title } from "web-client/components/atoms";
 import { Table } from "web-client/components/molecules";
 import UsersContext from "../../context/users-context";
-import { PageHeader } from "./user-list.styles";
+import { PageHeader, UserActionsTableCell } from "./user-list.styles";
 
 const UserList: React.FC = () => {
   const { isLoading, users } = useContext(UsersContext);
@@ -26,6 +26,7 @@ const UserList: React.FC = () => {
           title: 'Nome',
           dataIndex: 'name',
           key: 'name',
+          width: "50%",
         },
         {
           title: 'Idade',
@@ -36,6 +37,18 @@ const UserList: React.FC = () => {
           title: 'Email',
           dataIndex: 'email',
           key: 'email',
+        },
+        {
+          title: '',
+          key: 'actions',
+          render: (_, user) => <UserActionsTableCell>
+            <Button icon={<Icons.EditFilled />}>
+              Editar
+            </Button>
+            <Button danger icon={<Icons.DeleteFilled />}>
+              Remover
+            </Button>
+          </UserActionsTableCell>,
         },
       ]}
     />

@@ -2,6 +2,7 @@ import React, { PropsWithChildren, useEffect, useMemo, useState } from "react"
 
 import { User } from "../users.types";
 import UsersApiClient from "../api/users-api-client";
+import { fromUserDTOToWebUser } from "../utils/parseUser";
 import UsersContext from "./users-context"
 
 const UsersContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
@@ -17,7 +18,7 @@ const UsersContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setIsLoading(true);
     const users = await usersApiClient.getUsers();
     setIsLoading(false);
-    setUsers(users);
+    setUsers(users.map(fromUserDTOToWebUser));
   };
 
   return <UsersContext.Provider value={{
