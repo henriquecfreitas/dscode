@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 
-import { User as UserDTO } from "@dashskin/users-dtos";
+import { User as UserDTO } from "@dscode/users-dtos";
 import { User } from 'users-api/schemas/user.schema';
 
 @Injectable()

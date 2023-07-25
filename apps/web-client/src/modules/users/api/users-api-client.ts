@@ -1,4 +1,4 @@
-import { GetUsersResponse } from "@dashskin/users-dtos";
+import { GetUsersResponse } from "@dscode/users-dtos";
 
 class UsersApiClient {
   private baseURL: string;

@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dashskin/users-dtos": ["libs/users-dtos/src/index.ts"],
+      "@dscode/users-dtos": ["libs/users-dtos/src/index.ts"],
       "users-api/*": ["apps/users-api/src/*"],
       "web-client/*": ["apps/web-client/src/*"]
     }

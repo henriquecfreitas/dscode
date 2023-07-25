@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { GetUsersResponse } from "@dashskin/users-dtos";
+import { GetUsersResponse } from "@dscode/users-dtos";
 
 import { UsersService } from './users.service';
 

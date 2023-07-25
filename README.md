@@ -1,4 +1,4 @@
-# Dashskin
+# DS-Code
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -11,6 +11,8 @@ To start the development server run `nx serve users-api`.
 
 
 To start the development web client run `nx serve web-client`.
+
+The Web App should be available at `http://localhost:4200/`
 
 
 ## Generate code

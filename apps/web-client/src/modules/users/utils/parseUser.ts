@@ -1,4 +1,4 @@
-import { User as UserDTO } from "@dashskin/users-dtos";
+import { User as UserDTO } from "@dscode/users-dtos";
 import { User } from "../users.types";
 
 export function fromUserDTOToWebUser(
