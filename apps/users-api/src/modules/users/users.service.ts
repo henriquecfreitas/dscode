@@ -31,8 +31,8 @@ export class UsersService {
     }
 
     const filter = { _id: objectId };
-    const { modifiedCount } = await this.userModel.updateOne(filter, user);
-    if (!modifiedCount) {
+    const { matchedCount } = await this.userModel.updateOne(filter, user);
+    if (!matchedCount) {
       throw new NotFoundException();
     }
   }

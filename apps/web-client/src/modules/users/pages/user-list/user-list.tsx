@@ -1,14 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { Avatar, Button, Icons, Title } from "web-client/components/atoms";
 import { Table } from "web-client/components/molecules";
+import { UserFormModal } from "web-client/components/templates";
+
 import UsersContext from "../../context/users-context";
+import { User } from "../../users.types";
 import { PageHeader, UserActionsTableCell } from "./user-list.styles";
 
 const UserList: React.FC = () => {
-  const { isLoading, users } = useContext(UsersContext);
+  const { isLoading, users, deleteUser } = useContext(UsersContext);
+  const [selectedUser, setSelectedUser] = useState<User | undefined>(undefined);
 
   return <>
+    <UserFormModal
+      user={selectedUser}
+      isOpen={!!selectedUser}
+      onClose={() => setSelectedUser(undefined)}
+    />
     <PageHeader>
       <Title level={4}>Usuários</Title>
     </PageHeader>
@@ -42,10 +51,16 @@ const UserList: React.FC = () => {
           title: '',
           key: 'actions',
           render: (_, user) => <UserActionsTableCell>
-            <Button icon={<Icons.EditFilled />}>
+            <Button
+              icon={<Icons.EditFilled />}
+              onClick={() => { setSelectedUser(user) }}
+            >
               Editar
             </Button>
-            <Button danger icon={<Icons.DeleteFilled />}>
+            <Button danger
+              icon={<Icons.DeleteFilled />}
+              onClick={() => deleteUser(user.id)}
+            >
               Remover
             </Button>
           </UserActionsTableCell>,

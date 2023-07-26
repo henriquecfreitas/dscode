@@ -1,4 +1,6 @@
-export { Avatar } from "./Avatar/avatar";
-export { Button } from "./Button/button";
-export { Icon, Icons } from "./Icon/icon";
-export { default as Title } from "./Title/title";
+export { Avatar } from "./avatar/avatar";
+export { Button } from "./button/button";
+export { FormItem } from "./form-item/form-item";
+export { Icon, Icons } from "./icon/icon";
+export { Input } from "./input/input";
+export { default as Title } from "./title/title";
