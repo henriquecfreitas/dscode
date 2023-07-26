@@ -16,6 +16,11 @@ const StyledApp: React.FC<PropsWithChildren> = ({ children }) => {
     margin-top: calc(50px);
     background: ${colors.background};
     color: ${colors.text};
+    
+    @media (max-width: 800px) { 
+      margin-left: 0;
+      margin-right: 0;
+    }
   `;
 
   useEffect(() => {
