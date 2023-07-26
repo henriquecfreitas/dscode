@@ -12,7 +12,7 @@ export class UsersService {
   ) {}
 
   async getUsers(): Promise<UserDTO[]> {
-    const users = await this.userModel.find().exec();
+    const users = await this.userModel.find();
     return users.map(user => ({
       id: user.id,
       name: user.name,

@@ -9,8 +9,7 @@ export class UsersController {
 
   @Get()
   async getUsers(): Promise<GetUsersResponse> {
-    const users = await this.usersService.getUsers();
-    return users;
+    return await this.usersService.getUsers();
   }
 
   @Patch(":id")

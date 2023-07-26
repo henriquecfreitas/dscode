@@ -14,6 +14,7 @@ const UserList: React.FC = () => {
 
   return <>
     <UserFormModal
+      data-testid="user-form-modal"
       user={selectedUser}
       isOpen={!!selectedUser}
       onClose={() => setSelectedUser(undefined)}
@@ -22,6 +23,7 @@ const UserList: React.FC = () => {
       <Title level={4}>Usuários</Title>
     </PageHeader>
     <Table
+      data-testid="user-list-table"
       loading={isLoading}
       dataSource={users}
       columns={[
